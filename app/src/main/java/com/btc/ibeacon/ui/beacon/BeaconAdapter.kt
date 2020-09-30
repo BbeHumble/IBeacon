@@ -29,13 +29,14 @@ class BeaconAdapter(private val onItemClickListener: OnItemClickListener) :
         return eventItems.size
     }
 
-    fun addData(data: List<Beacon>) {
+    fun addAllData(list: List<Beacon>) {
         eventItems.clear()
-        eventItems.addAll(data)
+        eventItems.addAll(list)
         notifyDataSetChanged()
     }
 
+
     interface OnItemClickListener {
-        fun showInfo(item:Beacon)
+        fun showInfo(item: Beacon)
     }
 }

@@ -5,6 +5,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.btc.ibeacon.R
 import com.btc.ibeacon.model.Beacon
+import java.lang.String
+import java.util.*
 
 
 class BeaconHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -19,7 +21,8 @@ class BeaconHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     ) {
         mac.text = item.mac
         uuid.text = item.UUID
-        distance.text = item.distance.toString()
+
+        distance.text = String.format(Locale.ENGLISH, "%(.2f", item.distance)
         if (onItemClickListener != null) {
             itemView.setOnClickListener {
                 onItemClickListener.showInfo(

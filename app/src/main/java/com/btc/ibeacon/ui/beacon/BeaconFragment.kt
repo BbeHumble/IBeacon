@@ -7,7 +7,10 @@ import android.os.Bundle
 import android.os.RemoteException
 import com.btc.ibeacon.R
 import com.btc.ibeacon.model.Beacon
+import com.btc.ibeacon.ui.ble.BleFragment
 import com.btc.ibeacon.ui.details.DetailsActivity
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.frag_list.*
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
@@ -33,6 +36,25 @@ class BeaconFragment : MvpAppCompatFragment(R.layout.frag_list), BeaconConsumer,
     @ProvidePresenter
     fun providePresenter(): BeaconPresenter {
         return BeaconPresenter()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        val data = adapter.getData()
+        val gson = Gson()
+        outState.putString(BleFragment.DATAKEY, gson.toJson(data))
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        val gson = Gson()
+        val itemType = object : TypeToken<ArrayList<Beacon>>() {}.type
+        if (savedInstanceState?.getString(BleFragment.DATAKEY) != null)
+            adapter.addAllData(
+                gson.fromJson(
+                    savedInstanceState.getString(BleFragment.DATAKEY),
+                    itemType
+                )
+            )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,6 +92,7 @@ class BeaconFragment : MvpAppCompatFragment(R.layout.frag_list), BeaconConsumer,
     override fun onBeaconServiceConnect() {
         beaconManager?.removeAllRangeNotifiers()
         beaconManager?.removeAllMonitorNotifiers()
+        beaconManager?.foregroundBetweenScanPeriod = 1000
         beaconManager?.addRangeNotifier { beacons, _ ->
             val result = ArrayList<Beacon>()
             beacons.forEach {
@@ -106,7 +129,7 @@ class BeaconFragment : MvpAppCompatFragment(R.layout.frag_list), BeaconConsumer,
     }
 
     override fun showListOfBeacons(list: Collection<Beacon>) {
-        adapter.addData(list as List<Beacon>)
+        adapter.addAllData(list as List<Beacon>)
     }
 
     override fun showInfo(item: Beacon) {

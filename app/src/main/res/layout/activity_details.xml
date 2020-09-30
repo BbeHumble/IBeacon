@@ -1,100 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/rssiDetails"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.334"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/rssiTitle"
+        <TextView
+            android:id="@+id/rssiTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rssi" />
+
+        <TextView
+            android:id="@+id/rssiDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123123" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="@string/rssi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/UUIDDetail"
+        <TextView
+            android:id="@+id/UUIDTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/uuid" />
+
+        <TextView
+            android:id="@+id/UUIDDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="213" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintStart_toStartOf="@+id/rssiDetails"
-        app:layout_constraintTop_toBottomOf="@+id/rssiDetails" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/UUIDTitle"
+        <TextView
+            android:id="@+id/majorTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/major" />
+
+        <TextView
+            android:id="@+id/majorDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="23132" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/uuid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rssiTitle" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/majorDetail"
+        <TextView
+            android:id="@+id/manorTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minor" />
+
+        <TextView
+            android:id="@+id/minorDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintStart_toStartOf="@+id/UUIDDetail"
-        app:layout_constraintTop_toBottomOf="@+id/UUIDDetail" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/majorTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/major"
-        app:layout_constraintStart_toStartOf="@+id/UUIDTitle"
-        app:layout_constraintTop_toBottomOf="@+id/UUIDTitle" />
+        <TextView
+            android:id="@+id/distanceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/distance" />
 
-    <TextView
-        android:id="@+id/minorDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.334"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/majorDetail" />
-
-    <TextView
-        android:id="@+id/manorTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/minor"
-        app:layout_constraintStart_toStartOf="@+id/UUIDTitle"
-        app:layout_constraintTop_toBottomOf="@+id/majorTitle" />
-
-    <TextView
-        android:id="@+id/distanceTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/distance"
-        app:layout_constraintStart_toStartOf="@+id/manorTitle"
-        app:layout_constraintTop_toBottomOf="@+id/manorTitle" />
-
-    <TextView
-        android:id="@+id/distanceDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.334"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/minorDetail" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/distanceDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </LinearLayout>
+</LinearLayout>
