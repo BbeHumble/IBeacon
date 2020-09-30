@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ibeacon</string>
+    <string name="beacons_menu">Beacons</string>
+    <string name="ble_menu">BLE</string>
+    <string name="mac">mac:</string>
+    <string name="uuid">UUID:</string>
+    <string name="rssi">RSSI:</string>
+    <string name="major">major:</string>
+    <string name="minor">minor:</string>
+    <string name="distance">distance:</string>
+</resources>

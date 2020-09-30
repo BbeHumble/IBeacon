@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ble_menu"
+        android:icon="@drawable/ic_bluetooth_24"
+        android:title="@string/ble_menu" />
+    <item
+        android:id="@+id/beacons_menu"
+        android:icon="@drawable/ic_wifi_tethering_24"
+        android:title="@string/beacons_menu" />
+</menu>
